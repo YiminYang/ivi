@@ -1,0 +1,139 @@
+$screen-lg-min: 992px;
+
+@mixin lg {
+	@media (min-width: #{$screen-lg-min}) {
+		@content;
+	}
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+	@include lg{
+		padding: 40px 15%;
+		background: #e7e7e7;
+	}
+}
+
+input{
+	width: 95%;
+    padding: 2%;
+}
+textarea{
+	padding: 2%;
+    width: 96%;
+}
+select{
+	padding: 2%;
+    width: 100%;
+}
+label{
+	display: block;
+    margin-bottom: 10px;
+}
+
+.info-box-left{
+	border: solid 1px #e5e5e5;
+	border-radius: 5px;
+    background: white;
+    padding: 8% 0;
+    text-align: center;
+    @include lg{
+    	margin: 30px 0px;
+    }
+}
+
+.info-box-right{
+	border: solid 1px #e5e5e5;
+	border-radius: 5px;
+    background: white;
+    padding: 8% 0;
+    text-align: center;
+    @include lg{
+    	margin: 30px 0px;
+    }
+}
+
+.row {
+ 	display: flex;
+  	flex-direction: column;
+  	width: 100%;
+  	background: white;
+  	align-content: space-around;
+  	padding-top: 0px;
+  	@include lg{
+		flex-direction: row;
+		align-content: space-around;
+		padding: 20px 5%;
+	}
+}
+
+.full-row{
+	padding-top: 20px;
+	width: 100%;
+	background: white;
+	@include lg{
+		padding: 20px 5%;
+	}
+}
+
+.dark{
+	background: #f8f8f8;
+}
+
+.flex-left {
+	flex: 100%;
+	padding-top: 20px;
+	@include lg{
+		padding-top: 0px;
+		text-align: left;
+		padding-right: 20px;
+	}
+}
+
+.flex-right {
+	flex: 100%;
+	padding-top: 20px;
+	@include lg{
+		padding-top: 0px;
+		text-align: left;
+		padding-left: 20px;
+	}
+}
+
+@for $i from 2 through 12 {
+	.flex-left-#{$i} {
+		flex: 100%;
+		padding-top: 20px;
+		align-self: center;
+		@include lg{
+			padding-top: 0px;
+			flex:  $i / 12 * 100%;
+		}
+	}
+}
+
+@for $i from 2 through 12 {
+	.flex-right-#{$i} {
+		flex: 100%;
+		padding-top: 20px;
+		align-self: center;
+		@include lg{
+			padding-top: 0px;
+			flex:  $i / 12 * 100%;
+		}
+	}
+}
+
+.o-1{
+	order: 1;
+	@include lg{
+		order: 2;
+	}
+}
+
+.o-2{
+	order: 2;
+	@include lg{
+		order: 1;
+	}
+}
